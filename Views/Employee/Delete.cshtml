@@ -1,0 +1,44 @@
+﻿@model SteadtlerHR.Models.Employee
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+<div>
+    <h4>EmployeeInformation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.EmployeeName)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Email)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Department)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Manager)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Manager)
+        </dt>
+
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID"/>
+        <input type="submit" value="Delete" class="btn btn-danger"/>
+        <a asp-action="Index">Back to List</a>
+
+    </form>
+</div>
+

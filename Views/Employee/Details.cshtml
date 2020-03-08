@@ -1,0 +1,42 @@
+﻿@model SteadtlerHR.Models.Employee
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<div>
+    <h4>EmployeeInformation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.EmployeeName)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Email)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Department)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Manager)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Manager)
+        </dt>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID"></a>
+    <a asp-action="Index">Back to List</a>
+</div>
+
