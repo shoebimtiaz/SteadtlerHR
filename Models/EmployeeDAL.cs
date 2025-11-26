@@ -9,7 +9,7 @@ namespace SteadtlerHR.Models
 {
     public class EmployeeDAL
     {
-        string connectionString = "Data Source=LAPTOP-3KFTRPBK;Initial Catalog=SteadtlerHRDatabase;Integrated Security=True";
+       string connectionString = "Data Source=localhost,1433;Initial Catalog=EmployeeDB;User ID=sa;Password=DevOpsDB#Nov25;TrustServerCertificate=True;";
 
         public IEnumerable<Employee> GetAllEmployee()
         {
