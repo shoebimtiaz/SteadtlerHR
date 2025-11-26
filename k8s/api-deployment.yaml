@@ -28,3 +28,10 @@ spec:
                   name: sqlserver-secrets
                   key: SA_PASSWORD
               value: "Server=sqlserver;Database=${DB_Name};User Id=${DB_User};Password=${SA_PASSWORD};"
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"  
