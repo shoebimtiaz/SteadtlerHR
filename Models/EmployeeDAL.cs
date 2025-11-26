@@ -60,7 +60,7 @@ namespace SteadtlerHR.Models
                 SqlCommand command = new SqlCommand("SP_UpdateEmployee", connection);
                 command.CommandType = CommandType.StoredProcedure;
                 
-                command.Parameters.AddWithValue("@Id", employee.ID);
+                command.Parameters.AddWithValue("@EmployeeId", employee.ID);
                 command.Parameters.AddWithValue("@EmployeeName", employee.EmployeeName);
                 command.Parameters.AddWithValue("@Email", employee.Email);
                 command.Parameters.AddWithValue("@Department", employee.Department);
