@@ -80,7 +80,7 @@ namespace SteadtlerHR.Models
                 SqlCommand command = new SqlCommand("SP_DeleteEmployee", connection);
                 command.CommandType = CommandType.StoredProcedure;
 
-                command.Parameters.AddWithValue("@Id", employeeID);
+                command.Parameters.AddWithValue("@EmployeeId", employeeID);
 
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -95,7 +95,7 @@ namespace SteadtlerHR.Models
             {
                 SqlCommand cmd = new SqlCommand("SP_GetEmployeesByID", connection);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Id", employeeID);
+                cmd.Parameters.AddWithValue("@EmployeeId", employeeID);
                 connection.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
