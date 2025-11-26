@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: steadtlerhr
+  labels:
+    app: steadtlerhr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: steadtlerhr
+  template:
+    metadata:
+      labels:
+        app: steadtlerhr
+    spec:
+      containers:
+        - name: steadtlerhr
+          image: shoebimtiaz/steadtlerhr:latest
+          ports:
+            - containerPort: 8080 
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: "Development" 
+            - name: ConnectionStrings__SteadtlerHRDB
+              valueFrom:
+                secretKeyRef:
+                  name: sqlserver-secrets
+                  key: SA_PASSWORD
+              value: "Server=sqlserver;Database=${DB_Name};User Id=${DB_User};Password=${SA_PASSWORD};"
