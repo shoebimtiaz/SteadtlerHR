@@ -23,7 +23,7 @@ namespace SteadtlerHR.Models
                 while(dr.Read())
                 {
                     Employee employee = new Employee();
-                    employee.ID = Convert.ToInt32(dr["EmployeeID"].ToString());
+                    employee.ID = Convert.ToInt32(dr["Id"].ToString());
                     employee.EmployeeName = dr["EmployeeName"].ToString();
                     employee.Email = dr["Email"].ToString();
                     employee.Department = dr["Department"].ToString();
@@ -60,7 +60,7 @@ namespace SteadtlerHR.Models
                 SqlCommand command = new SqlCommand("SP_UpdateEmployee", connection);
                 command.CommandType = CommandType.StoredProcedure;
                 
-                command.Parameters.AddWithValue("@EmployeeID", employee.ID);
+                command.Parameters.AddWithValue("@Id", employee.ID);
                 command.Parameters.AddWithValue("@EmployeeName", employee.EmployeeName);
                 command.Parameters.AddWithValue("@Email", employee.Email);
                 command.Parameters.AddWithValue("@Department", employee.Department);
@@ -80,7 +80,7 @@ namespace SteadtlerHR.Models
                 SqlCommand command = new SqlCommand("SP_DeleteEmployee", connection);
                 command.CommandType = CommandType.StoredProcedure;
 
-                command.Parameters.AddWithValue("@EmployeeID", employeeID);
+                command.Parameters.AddWithValue("@Id", employeeID);
 
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -95,12 +95,12 @@ namespace SteadtlerHR.Models
             {
                 SqlCommand cmd = new SqlCommand("SP_GetEmployeesByID", connection);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@EmployeeID", employeeID);
+                cmd.Parameters.AddWithValue("@Id", employeeID);
                 connection.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    employee.ID = Convert.ToInt32(dr["EmployeeID"].ToString());
+                    employee.ID = Convert.ToInt32(dr["Id"].ToString());
                     employee.EmployeeName = dr["EmployeeName"].ToString();
                     employee.Email = dr["Email"].ToString();
                     employee.Department = dr["Department"].ToString();
