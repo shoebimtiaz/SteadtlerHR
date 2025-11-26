@@ -1,0 +1,57 @@
+# Ignore build outputs
+bin/
+obj/
+out/
+publish/
+
+# User-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio temporary files
+.vs/
+*.vscode/
+
+# Rider IDE files
+.idea/
+
+# NuGet packages
+*.nupkg
+packages/
+.nuget/
+
+# ASP.NET Core temporary files
+*.log
+*.vsix
+*.dbmdl
+*.bak
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Node / npm (if you have frontend assets)
+node_modules/
+
+# Docker
+*.dockerfile
+*.dockerignore
+docker-compose.override.yml
+
+# Publish folder (optional, if you publish locally)
+publish/
+
+# Other files to ignore
+*.env
+*.local
